@@ -33,7 +33,7 @@ $(document).ready(function(){
 });
 
 	function fn_login(){
-	    var comSubmit = new ComSubmit();
+	    var comSubmit = new ComSubmit("login");
 	    comSubmit.setUrl("<c:url value='/mypage.do' />");
 	    comSubmit.submit();
 	}
@@ -70,16 +70,19 @@ $(document).ready(function(){
 	        
 	        <label for="password">Password</label> 
 	        <input type="password" name="password" required/>
-	        
+	         
 	        <label for="password">Confirm Password</label> 
-	        <input type="password" name="password" required/>
-	        
-	        <label for="first name">性</label>
-	        <input type="text" name="first name" required/>
-	        
-	        <label for="first name">名</label> 
-	        <input type="text" name="last name" required/>
-	        
+	        <input type="password" name="password_confirm" required/>
+	         
+	         <div style="float: left; padding: 10px; width: 50%;">
+		        <label for="first name">性</label>
+			    <input type="text" name="first name" required/>
+	        </div>
+	        <div style="float: left; padding: 10px; width: 50%;">
+		        <label for="first name">名</label> 
+		        <input type="text" name="last name" required/>
+	        </div>
+		    
 	       <input type="submit" id="sighup_submit" value="Sign up" class="button" />
 	      </div>
 	  </form>

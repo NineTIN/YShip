@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="login">
+    <!-- SELECT -->
+    <select id="select_getEmail" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT 
+			  PK_MEMBER_KEY,
+			  MEMBER_E_MAIL,
+			  MEMBER_ID,
+			  MEMBER_PW,
+			  MEMBER_FIRST_NAME,
+			  MEMBER_LAST_NAME,
+			  MEMBER_FIRST_NAME_EN,
+			  MEMBER_LAST_NAME_E,
+			  MEMBER_BIRTH_DT,
+			  MEMBER_ZIPCODE,
+			  MEMBER_ADDR1,
+			  MEMBER_ADDR2,
+			  MEMBER_GENDER,
+			  MEMBER_CRT_DT,
+ 			FROM
+ 				TB_MEMBER
+        ]]>
+    </select>
+    
+    
+    <!-- INSERT --> 
+    <insert id="insertCreateID" parameterType="hashmap">
+        <![CDATA[
+        	 INSERT INTO TB_MEMBER
+	        (
+			  PK_MEMBER_KEY,
+			  MEMBER_E_MAIL,
+			  MEMBER_PW,
+			  MEMBER_FIRST_NAME,
+			  MEMBER_LAST_NAME
+	        )
+	        VALUES
+	        (
+	            0,
+	            #{email},
+	            #{password},
+	            #{first name},
+	            #{last name}
+	        )
+        ]]>
+	</insert>
+	
+	<!-- UPDATE 
+	<update id="updateHitCnt" parameterType="hashmap">
+    <![CDATA[
+        UPDATE TB_BOARD
+        SET
+            HIT_CNT = HIT_CNT + 1
+        WHERE
+            IDX = #{IDX}   
+    ]]>
+	</update>
+	
+	<update id="updateBoard" parameterType="hashmap">
+    <![CDATA[
+        UPDATE TB_BOARD
+        SET
+            TITLE = #{TITLE},
+            CONTENTS = #{CONTENTS}
+        WHERE
+            IDX = #{IDX}   
+    ]]>
+	</update>
+
+	<update id="deleteBoard" parameterType="hashmap">
+	    <![CDATA[
+	        UPDATE TB_BOARD
+	        SET
+	            DEL_GB = 'Y'
+	        WHERE
+	            IDX = #{IDX}
+	    ]]>
+	</update>
+	-->
+</mapper>
