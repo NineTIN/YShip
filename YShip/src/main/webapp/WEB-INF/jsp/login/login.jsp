@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +34,7 @@ $(document).ready(function(){
 
 	function fn_login(){
 	    var comSubmit = new ComSubmit("login");
-	    comSubmit.setUrl("<c:url value='/mypage.do' />");
+	    comSubmit.setUrl("<c:url value='/login.do' />");
 	    comSubmit.submit();
 	}
 	

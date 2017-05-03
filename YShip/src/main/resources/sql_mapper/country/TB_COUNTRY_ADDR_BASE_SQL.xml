@@ -1,63 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="member">
+<mapper namespace="country">
     <!-- SELECT -->
     <select id="select_all" parameterType="hashmap" resultType="hashmap">
         <![CDATA[
-            SELECT 
-			  PK_MEMBER_KEY,
-			  MEMBER_E_MAIL,
-			  MEMBER_ID,
-			  MEMBER_PW,
-			  MEMBER_FIRST_NAME,
-			  MEMBER_LAST_NAME,
-			  MEMBER_FIRST_NAME_EN,
-			  MEMBER_LAST_NAME_EN,
-			  MEMBER_BIRTH_DT,
-			  MEMBER_ZIPCODE,
-			  MEMBER_ADDR1,
-			  MEMBER_ADDR2,
-			  MEMBER_GENDER,
-			  MEMBER_CRT_DT
+            SELECT
+				PK_COUNTRY_KEY,
+	  			COUNTRY_CODE,
+	  			COUNTRY_BASE_ADDR1,
+	  			COUNTRY_BASE_ADDR2
  			FROM
- 				TB_MEMBER
+ 				TB_COUNTRY_ADDR_BASE
         ]]>
     </select>
     
-   <select id="select_getMemKey" parameterType="hashmap" resultType="hashmap">
+    <select id="select_getCountryKey" parameterType="hashmap" resultType="hashmap">
         <![CDATA[
-            SELECT 
-			  PK_MEMBER_KEY
+            SELECT
+				PK_COUNTRY_KEY
  			FROM
- 				TB_MEMBER
- 			WHERE
- 				 MEMBER_E_MAIL = #{email}
+ 				TB_COUNTRY_ADDR_BASE
         ]]>
-    </select>
+    </select>    
     
-    
-    <!-- INSERT --> 
-    <insert id="insertCreateID" parameterType="hashmap">
+    <!-- INSERT 
+    <insert id="insertMypob" parameterType="hashmap">
         <![CDATA[
-        	 INSERT INTO TB_MEMBER
+        	 INSERT INTO TB_MEMBER_POB
 	        (
-			  PK_MEMBER_KEY,
-			  MEMBER_E_MAIL,
-			  MEMBER_PW,
-			  MEMBER_FIRST_NAME,
-			  MEMBER_LAST_NAME
+			   FR_MEM_POB_KEY,
+  			   FR_COUNTRY_POB_KEY,
+  			   MEMBER_POB
 	        )
 	        VALUES
 	        (
-	            0,
-	            #{email},
-	            #{password},
-	            #{first name},
-	            #{last name}
+	            #{mypob}
 	        )
+	        WHERE
+            	FR_MEM_POB_KEY = #{memkey}
         ]]>
 	</insert>
+	-->
 	
 	<!-- UPDATE 
 	<update id="updateHitCnt" parameterType="hashmap">

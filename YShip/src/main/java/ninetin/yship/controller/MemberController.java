@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +17,12 @@ import ninetin.include.common.CommandMap;
 @Controller
 public class MemberController {
 	Logger log = Logger.getLogger(this.getClass());
-
+	
 	@RequestMapping(value = "/mypage.do")
-	public ModelAndView fromLogin(CommandMap commandMap) throws Exception {
+	public ModelAndView fromLogin(CommandMap commandMap, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView("/mypage/me");
-
+		log.debug("get session = "+session.getAttribute("memKey"));
+		
 		 if(commandMap.isEmpty() == false){
 	            Iterator<Entry<String,Object>> iterator = commandMap.getMap().entrySet().iterator();
 	            Entry<String,Object> entry = null;

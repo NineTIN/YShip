@@ -13,6 +13,5 @@
 <script src="<c:url value='/js/jquery.min.js'/>"></script>
 <script src="<c:url value='/js/bootstrap.min.js'/>" charset="utf-8"></script>
 <script src="<c:url value='/js/common.js'/>" charset="utf-8"></script>
-<script src="<c:url value='/js/login.js'/>" charset="utf-8"></script>
 <script src="<c:url value='/js/metisMenu.min.js'/>" charset="utf-8"></script>
 <script src="<c:url value='/js/sb-admin-2.min.js'/>" charset="utf-8"></script>
