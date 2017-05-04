@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-          <div class="row">
+<div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">国家別住所</h1>
+                    <h1 class="page-header">各国の物流センターの住所（<font color="pink">#個人ポスト</font>）</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -9,27 +9,27 @@
             <div class="row">
 				<div style="float:left; margin:10px;">
 					<h1>
-					<span class="label label-info"><span class="flag-icon flag-icon-us"></span>E 54Th St, Elmwood Park</span>
+					<span class="label label-info"><span class="flag-icon flag-icon-us"></span>${COUNTRY_BASE_ADDR1_0} ${COUNTRY_BASE_ADDR2_0} <font color="pink">#${MEMBER_POB_0}</font></span>
 					</h1>
 				</div>
 				<div style="float:left; margin:10px;">
 					<h1>
-					<span class="label label-info"><span class="flag-icon flag-icon-de"></span>E 54Th St, Elmwood Park</span>
+					<span class="label label-info"><span class="flag-icon flag-icon-de"></span>${COUNTRY_BASE_ADDR1_1} ${COUNTRY_BASE_ADDR2_1} <font color="pink">#${MEMBER_POB_1}</font></span>
 					</h1>
 				</div>
 				<div style="float:left; margin:10px;">
 					<h1>
-					<span class="label label-info"><span class="flag-icon flag-icon-cn"></span>E 54Th St, Elmwood Park</span>
+					<span class="label label-info"><span class="flag-icon flag-icon-cn"></span>${COUNTRY_BASE_ADDR1_2} ${COUNTRY_BASE_ADDR2_2} <font color="pink">#${MEMBER_POB_2}</font></span>
 					</h1>
 				</div>
 				<div style="float:left; margin:10px;">
 					<h1>
-					<span class="label label-info"><span class="flag-icon flag-icon-tw"></span>E 54Th St, Elmwood Park</span>
+					<span class="label label-info"><span class="flag-icon flag-icon-tw"></span>${COUNTRY_BASE_ADDR1_3} ${COUNTRY_BASE_ADDR2_3} <font color="pink">#${MEMBER_POB_3}</font></span>
 					</h1>				
 				</div>
 				<div style="float:left; margin:10px;">
 					<h1>
-					<span class="label label-info"><span class="flag-icon flag-icon-kr"></span>E 54Th St, Elmwood Park</span>
+					<span class="label label-info"><span class="flag-icon flag-icon-kr"></span>${COUNTRY_BASE_ADDR1_4} ${COUNTRY_BASE_ADDR2_4} <font color="pink">#${MEMBER_POB_4}</font></span>
 					</h1>
 				</div>
             </div>

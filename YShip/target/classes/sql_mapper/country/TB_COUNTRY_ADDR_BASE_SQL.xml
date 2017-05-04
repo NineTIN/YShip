@@ -14,6 +14,16 @@
  				TB_COUNTRY_ADDR_BASE
         ]]>
     </select>
+
+    <select id="select_getBaseAddr" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT
+	  			COUNTRY_BASE_ADDR1,
+	  			COUNTRY_BASE_ADDR2
+ 			FROM
+ 				TB_COUNTRY_ADDR_BASE
+        ]]>
+    </select>
     
     <select id="select_getCountryKey" parameterType="hashmap" resultType="hashmap">
         <![CDATA[

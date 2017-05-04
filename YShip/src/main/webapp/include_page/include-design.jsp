@@ -66,7 +66,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-info-circle fa-fw"></i><font color="#337ab7">商品到着の周知</font></a>
+                            <a href="index.html"><i class="fa fa-info-circle fa-fw"></i><font color="#337ab7">商品到着の通知</font></a>
                         </li>
                         <li>
                             <a href="index.html"><i class="fa fa-credit-card-alt  fa-fw"></i><font color="#5cb85c">決済完了にする</font></a>

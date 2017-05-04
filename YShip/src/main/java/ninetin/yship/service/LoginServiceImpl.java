@@ -29,12 +29,6 @@ public class LoginServiceImpl implements LoginService{
 	}
 
 	@Override
-	public List<Map<String, Object>> select_getBaseAddr() throws Exception {
-		// TODO Auto-generated method stub
-		return loginDAO.select_getBaseAddr();
-	}
-
-	@Override
 	public List<Map<String, Object>> select_getCountryKey() throws Exception {
 		// TODO Auto-generated method stub
 		return loginDAO.select_getCountryKey();

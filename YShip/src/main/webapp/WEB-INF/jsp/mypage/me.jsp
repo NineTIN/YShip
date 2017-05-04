@@ -8,12 +8,12 @@
 </head>
 <script type="text/javascript">
 $(document).ready(function(){
-    $("#page-wrapper").load("inner_mypage.jsp");
+    $("#page-wrapper").load("<c:url value='/inner_mypage.do' />");
     
     $("#applyForm").on("click", function(e){ //applyForm Button
         e.preventDefault();
         $("#page-wrapper").remove(".row");
-        $("#page-wrapper").load("inner_inputform.jsp");
+        $("#page-wrapper").load("<c:url value='/inner_inputform.do' />");
     });
      
     $("#applyhistory").on("click", function(e){ //applyhistory Button

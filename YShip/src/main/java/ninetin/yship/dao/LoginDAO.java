@@ -20,11 +20,6 @@ public class LoginDAO extends DAO{
 		return (Map<String, Object>) selectOne("member.select_getMemKey",map);
 	}
 
-	public List<Map<String, Object>> select_getBaseAddr() {
-		// TODO Auto-generated method stub
-		return (List<Map<String, Object>>) selectList("country.select_all");
-	}
-
 	public List<Map<String, Object>> select_getCountryKey() {
 		// TODO Auto-generated method stub
 		return (List<Map<String, Object>>) selectList("country.select_getCountryKey");

@@ -16,6 +16,17 @@
         ]]>
     </select>
     
+    <select id="select_getMyPob" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT
+  			   MEMBER_POB
+ 			FROM
+ 				TB_MEMBER_POB
+ 			WHERE
+ 				FR_MEM_POB_KEY = #{memkey}
+        ]]>
+    </select>    
+
     
     <!-- INSERT -->
     <insert id="insertMypob" parameterType="hashmap">

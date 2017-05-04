@@ -9,8 +9,6 @@ public interface LoginService {
 
 	Map<String, Object> select_getMemKey(Map<String, Object> map) throws Exception;
 
-	List<Map<String, Object>> select_getBaseAddr() throws Exception;
-
 	List<Map<String, Object>> select_getCountryKey() throws Exception;
 
 	void insertMypob(Map<String, Object> map) throws Exception;

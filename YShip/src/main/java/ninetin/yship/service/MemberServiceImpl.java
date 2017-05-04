@@ -1,5 +1,6 @@
 package ninetin.yship.service;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -15,8 +16,14 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDAO memberDAO;
 	
 	@Override
-	public void insertCreateID(Map<String, Object> map) throws Exception  {
+	public List<Map<String, Object>> select_getBaseAddr() throws Exception {
 		// TODO Auto-generated method stub
-		memberDAO.insertCreateID(map);
+		return memberDAO.select_getBaseAddr();
+	}
+
+	@Override
+	public List<Map<String, Object>> select_getMyPobList(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		return memberDAO.select_getMyPob(map);
 	}
 }

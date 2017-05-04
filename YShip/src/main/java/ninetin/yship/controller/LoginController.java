@@ -31,6 +31,7 @@ public class LoginController {
 	public ModelAndView login(CommandMap commandMap, HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView("/login/login");
 		String memKey = "";
+		
 		if(commandMap.isEmpty() == false){
 			Iterator<Entry<String,Object>> iterator = commandMap.getMap().entrySet().iterator();
 			boolean result = valid.Checker(iterator);
@@ -44,8 +45,9 @@ public class LoginController {
             		}
                 }//end for
                 //mv.addObject("map", map);
-            	
-            	mv = new ModelAndView("/mypage/me");
+            	map.clear();
+            	map = null;
+            	mv = new ModelAndView("redirect:/mypage.do");
     		}//end if
 		}
 		
@@ -72,7 +74,9 @@ public class LoginController {
             			memKey = memMap.get(mapkey).toString();
             			session.setAttribute("memKey", memKey);
             		}
-                }//end for            	
+                }//end for
+            	memMap.clear();
+            	memMap = null;
             	
             	//Get Base Addr
             	List<Map<String,Object>> baseMapList = loginService.select_getCountryKey();
@@ -91,6 +95,10 @@ public class LoginController {
             			//log.debug("memKey : " + memKey + "coutryKey : "+ baseMapList.get(i).get(mapkey)+ "mypob:" + getSaltString());
                     }//end for	
             	}
+            	pobMap.clear();
+            	pobMap = null;
+            	baseMapList.clear();
+            	baseMapList = null;
             	
             	mv = new ModelAndView("/login/login");
             }
