@@ -13,6 +13,18 @@
 <link rel="stylesheet" href="css/sb-admin-2.css">
 </head>
 <script type="text/javascript">
+$(document).ready(function(){
+    $("#initialization").on("click", function(e){ //initialization Button
+        e.preventDefault();
+        fn_initialization();
+    });
+});
+ 
+function fn_initialization(){
+    var comSubmit = new ComSubmit();
+    comSubmit.setUrl("<c:url value='/initialization.do' />");
+    comSubmit.submit();
+}
 </script>
 <body>
     <div id="wrapper">
@@ -26,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="mypage.do"><i class="fa fa-y-combinator  fa-fw"></i> YShip Demo</a>
+                <a class="navbar-brand" href="mypage.do"><i class="fa fa-y-combinator  fa-fw"></i> Y!Ship Demo</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -66,16 +78,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-info-circle fa-fw"></i><font color="#337ab7">商品到着の通知</font></a>
-                        </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-credit-card-alt  fa-fw"></i><font color="#5cb85c">決済完了にする</font></a>
-                        </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-rocket fa-fw"></i><font color="#f0ad4e">国際EMS配送開始</font></a>
-                        </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-truck fa-fw"></i><font color="#d9534f">国内配送開始</font></a>
+                            <a href="#this" id="initialization"><i class="fa fa-flask fa-fw"></i><font color="#d9534f">初期状態にする</font></a>
                         </li>  
                     </ul>
                 </div>

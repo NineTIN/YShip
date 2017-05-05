@@ -3,81 +3,70 @@
  
 <mapper namespace="shipping_info">
     <!-- SELECT -->
-    <select id="select_getEmail" parameterType="hashmap" resultType="hashmap">
+    <select id="select_all" parameterType="hashmap" resultType="hashmap">
         <![CDATA[
             SELECT 
-			  PK_MEMBER_KEY,
-			  MEMBER_E_MAIL,
-			  MEMBER_ID,
-			  MEMBER_PW,
-			  MEMBER_FIRST_NAME,
-			  MEMBER_LAST_NAME,
-			  MEMBER_FIRST_NAME_EN,
-			  MEMBER_LAST_NAME_E,
-			  MEMBER_BIRTH_DT,
-			  MEMBER_ZIPCODE,
-			  MEMBER_ADDR1,
-			  MEMBER_ADDR2,
-			  MEMBER_GENDER,
-			  MEMBER_CRT_DT,
+			  FR_MEMBER_SHIPPING_KEY,
+			  PK_SHIPPING_KEY,
+			  SHIPPING_ORDER_NUM,
+			  SHIPPING_URL,
+			  SHIPPING_NAME,
+			  SHIPPING_IMG_NAME,
+			  SHIPPING_IMG_STR_NAME,
+			  SHIPPING_VALUE,
+			  SHIPPING_QTY,
+			  SHIPPING_TOTAL_VALUE,
+			  SHIPPING_CRT_DT
  			FROM
- 				TB_MEMBER
+ 				TB_SHIPPING_INFO
+ 			WHERE
+ 				FR_MEMBER_SHIPPING_KEY = ${memkey}
         ]]>
     </select>
     
+    <select id="select_getShippingKey" parameterType="hashmap" resultType="hashmap">
+        <![CDATA[
+            SELECT 
+			  PK_SHIPPING_KEY
+ 			FROM
+ 				TB_SHIPPING_INFO
+ 			WHERE
+ 				FR_MEMBER_SHIPPING_KEY = ${memkey}
+        ]]>
+    </select>
     
     <!-- INSERT --> 
-    <insert id="insertCreateID" parameterType="hashmap">
+    <insert id="insertCreateShipping" parameterType="hashmap">
         <![CDATA[
-        	 INSERT INTO TB_MEMBER
+        	 INSERT INTO TB_SHIPPING_INFO
 	        (
-			  PK_MEMBER_KEY,
-			  MEMBER_E_MAIL,
-			  MEMBER_PW,
-			  MEMBER_FIRST_NAME,
-			  MEMBER_LAST_NAME
+			  FR_MEMBER_SHIPPING_KEY,
+			  PK_SHIPPING_KEY,
+			  SHIPPING_ORDER_NUM,
+			  SHIPPING_URL,
+			  SHIPPING_NAME,
+			  SHIPPING_VALUE,
+			  SHIPPING_QTY,
+			  SHIPPING_TOTAL_VALUE
 	        )
 	        VALUES
 	        (
+	        	${memkey},
 	            0,
-	            #{email},
-	            #{password},
-	            #{first name},
-	            #{last name}
+	            #{order_number},
+	            #{goods_url},
+	            #{goods_name},
+	            #{goods_value},
+	            #{goods_qty},
+	            #{total_value}
 	        )
         ]]>
 	</insert>
 	
-	<!-- UPDATE 
-	<update id="updateHitCnt" parameterType="hashmap">
+	<!-- DELETE -->
+	<delete id="delete_shipping" parameterType="hashmap">
     <![CDATA[
-        UPDATE TB_BOARD
-        SET
-            HIT_CNT = HIT_CNT + 1
-        WHERE
-            IDX = #{IDX}   
+        DELETE FROM TB_SHIPPING_INFO WHERE FR_MEMBER_SHIPPING_KEY = ${memkey}
     ]]>
-	</update>
-	
-	<update id="updateBoard" parameterType="hashmap">
-    <![CDATA[
-        UPDATE TB_BOARD
-        SET
-            TITLE = #{TITLE},
-            CONTENTS = #{CONTENTS}
-        WHERE
-            IDX = #{IDX}   
-    ]]>
-	</update>
-
-	<update id="deleteBoard" parameterType="hashmap">
-	    <![CDATA[
-	        UPDATE TB_BOARD
-	        SET
-	            DEL_GB = 'Y'
-	        WHERE
-	            IDX = #{IDX}
-	    ]]>
-	</update>
-	-->
+	</delete>
 </mapper>

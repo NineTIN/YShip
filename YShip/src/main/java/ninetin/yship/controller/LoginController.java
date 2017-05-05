@@ -44,7 +44,7 @@ public class LoginController {
             			session.setAttribute("memKey", memKey);
             		}
                 }//end for
-                //mv.addObject("map", map);
+
             	map.clear();
             	map = null;
             	mv = new ModelAndView("redirect:/mypage.do");
@@ -92,9 +92,9 @@ public class LoginController {
                 			//Set MyPob
                         	loginService.insertMypob(pobMap);
                 		}
-            			//log.debug("memKey : " + memKey + "coutryKey : "+ baseMapList.get(i).get(mapkey)+ "mypob:" + getSaltString());
                     }//end for	
             	}
+            	
             	pobMap.clear();
             	pobMap = null;
             	baseMapList.clear();

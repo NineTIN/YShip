@@ -18,7 +18,7 @@ $(document).ready(function(){
      
     $("#applyhistory").on("click", function(e){ //applyhistory Button
         e.preventDefault();
-        window.alert("準備中");
+        window.alert("準備中 ^_^;");
     });
 });
 </script>

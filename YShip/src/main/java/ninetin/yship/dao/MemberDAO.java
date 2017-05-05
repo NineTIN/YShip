@@ -19,4 +19,19 @@ public class MemberDAO extends DAO{
 		// TODO Auto-generated method stub
 		return (List<Map<String,Object>>) selectList("member_pob.select_getMyPob", map);
 	}
+
+	public void insert_Shipping(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		insert("shipping_info.insertCreateShipping",map);
+	}
+
+	public List<Map<String, Object>> select_getShippingList(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return (List<Map<String,Object>>) selectList("shipping_info.select_getShippingKey",map);
+	}
+
+	public void delete_shipping(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		delete("shipping_info.delete_shipping", map);
+	}
 }

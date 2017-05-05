@@ -26,4 +26,22 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return memberDAO.select_getMyPob(map);
 	}
+
+	@Override
+	public void insert_Shipping(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		memberDAO.insert_Shipping(map);
+	}
+
+	@Override
+	public List<Map<String, Object>> select_getShippingList(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		return memberDAO.select_getShippingList(map);
+	}
+
+	@Override
+	public void delete_shipping(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		memberDAO.delete_shipping(map);
+	}
 }
